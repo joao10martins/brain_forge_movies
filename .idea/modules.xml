@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/brain_forge_movies.iml" filepath="$PROJECT_DIR$/brain_forge_movies.iml" />
-      <module fileurl="file://$PROJECT_DIR$/android/brain_forge_movies_android.iml" filepath="$PROJECT_DIR$/android/brain_forge_movies_android.iml" />
     </modules>
   </component>
 </project>
