@@ -1,4 +1,5 @@
 import 'package:brain_forge_movies/core/network/models/movie.dart';
+import 'package:brain_forge_movies/core/usecases/usecase.dart';
 import 'package:brain_forge_movies/features/dashboard/domain/repositories/dashboard_repository.dart';
 import 'package:brain_forge_movies/features/dashboard/domain/usecases/get_popular_movies.dart';
 import 'package:dartz/dartz.dart';
@@ -31,7 +32,7 @@ void main() {
           // arrange
           when(mockDashboardRepository.getPopularMovies()).thenAnswer((_) async => Right(tPopularMovies));
           // act
-          final result = await usecase();
+          final result = await usecase(NoParams());
           // assert
           expect(result, Right(tPopularMovies));
           verify(mockDashboardRepository.getPopularMovies());
