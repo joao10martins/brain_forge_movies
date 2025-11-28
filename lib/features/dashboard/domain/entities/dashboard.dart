@@ -4,8 +4,8 @@ import 'package:equatable/equatable.dart';
 class Dashboard extends Equatable {
   final List<Movie> popularMovies;
 
-  Dashboard({required this.popularMovies}) : super(popularMovies);
+  const Dashboard({required this.popularMovies});
 
   @override
-  List<Object?> get props => throw UnimplementedError();
+  List<Object?> get props => [popularMovies];
 }
