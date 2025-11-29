@@ -6,7 +6,7 @@
 import 'dart:async' as _i4;
 
 import 'package:brain_forge_movies/core/error/failures.dart' as _i5;
-import 'package:brain_forge_movies/features/dashboard/domain/entities/movie.dart'
+import 'package:brain_forge_movies/features/dashboard/data/models/movie.dart'
     as _i6;
 import 'package:brain_forge_movies/features/dashboard/domain/repositories/dashboard_repository.dart'
     as _i3;
