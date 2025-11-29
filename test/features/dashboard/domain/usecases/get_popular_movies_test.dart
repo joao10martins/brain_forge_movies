@@ -1,11 +1,11 @@
-import 'package:brain_forge_movies/core/network/models/movie.dart';
 import 'package:brain_forge_movies/core/usecases/usecase.dart';
+import 'package:brain_forge_movies/features/dashboard/domain/entities/movie.dart';
 import 'package:brain_forge_movies/features/dashboard/domain/repositories/dashboard_repository.dart';
 import 'package:brain_forge_movies/features/dashboard/domain/usecases/get_popular_movies.dart';
 import 'package:dartz/dartz.dart';
-import 'package:mockito/mockito.dart';
-import 'package:mockito/annotations.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
+import 'package:mockito/mockito.dart';
 
 @GenerateNiceMocks([MockSpec<DashboardRepository>()])
 import 'get_popular_movies_test.mocks.dart';
@@ -27,7 +27,7 @@ void main() {
   });
 
   test(
-      'should get a list of popular movies from the repository',
+      'should get a list of   movies from the repository',
       () async {
           // arrange
           when(mockDashboardRepository.getPopularMovies()).thenAnswer((_) async => Right(tPopularMovies));

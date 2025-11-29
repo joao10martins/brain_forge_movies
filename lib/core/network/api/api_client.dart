@@ -57,17 +57,17 @@ class ApiClient {
         );
       }
       return response.data;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       logger.log(e.toString());
-      if (e.type == DioErrorType.response) {
+      if (e.type == DioExceptionType.badResponse) {
         throw ServerFailure(
           statusCode: e.response?.statusCode,
           errorMessage: _getErrorMessageFromResponse(e.response),
           reason: endpoint,
         );
-      } else if (e.type == DioErrorType.connectTimeout ||
-          e.type == DioErrorType.receiveTimeout ||
-          e.type == DioErrorType.sendTimeout) {
+      } else if (e.type == DioExceptionType.connectionTimeout ||
+          e.type == DioExceptionType.receiveTimeout ||
+          e.type == DioExceptionType.sendTimeout) {
         throw NoInternetConnectionFailure();
       }
       throw ClientFailure(e);
