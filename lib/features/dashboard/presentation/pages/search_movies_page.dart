@@ -2,6 +2,7 @@ import 'package:brain_forge_movies/features/dashboard/domain/entities/movie.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:brain_forge_movies/features/dashboard/presentation/cubit/search_cubit.dart';
+import 'package:go_router/go_router.dart';
 
 class SearchMoviesPage extends StatefulWidget {
   const SearchMoviesPage({super.key});
@@ -127,9 +128,7 @@ class MovieTile extends StatelessWidget {
       title: Text(movie.title),
       subtitle: Text(movie.releaseDate),
       trailing: Text('${movie.rating}'),
-      onTap: () {
-        // Navigate to movie detail if needed
-      },
+      onTap: () => context.push('/details/${movie.id}'),
     );
   }
 }

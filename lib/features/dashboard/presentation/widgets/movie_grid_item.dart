@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../../domain/entities/movie.dart';
 
 class MovieGridItem extends StatelessWidget {
@@ -7,13 +8,10 @@ class MovieGridItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final poster = movie.posterPath != null ? 'https://image.tmdb.org/t/p/w500${movie.posterPath}' : null;
+    final poster = 'https://image.tmdb.org/t/p/w500${movie.posterPath}';
 
     return GestureDetector(
-      onTap: () {
-        // Navigate to details route, e.g.:
-        // Navigator.pushNamed(context, '/movie/${movie.id}');
-      },
+      onTap: () => context.push('/details/${movie.id}'),
       child: Column(
         children: [
           Expanded(

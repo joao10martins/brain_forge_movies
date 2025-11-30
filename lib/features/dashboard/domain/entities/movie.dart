@@ -1,4 +1,3 @@
-import 'package:brain_forge_movies/features/dashboard/data/models/movie_model.dart';
 import 'package:equatable/equatable.dart';
 
 
