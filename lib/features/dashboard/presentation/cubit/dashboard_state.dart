@@ -6,9 +6,13 @@ part 'dashboard_state.freezed.dart';
 @freezed
 class DashboardState with _$DashboardState {
   const factory DashboardState.initial() = _Initial;
-  const factory DashboardState.loading() = _Loading;
-  const factory DashboardState.popularLoaded(List<Movie> popular) = _PopularLoaded;
-  const factory DashboardState.searchLoading() = _SearchLoading;
-  const factory DashboardState.searchLoaded(List<Movie> results) = _SearchLoaded;
+  const factory DashboardState.isLoading() = _IsLoading;
+  const factory DashboardState.isLoadingMore() = _IsLoadingMore;
+  const factory DashboardState.popularLoaded({
+    required List<Movie> movies,
+    required int page,
+    required int totalPages,
+    @Default(false) bool isLoadingMore
+  }) = _PopularLoaded;
   const factory DashboardState.error(String message) = _Error;
 }

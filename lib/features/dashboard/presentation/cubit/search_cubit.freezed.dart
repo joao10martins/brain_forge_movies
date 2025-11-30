@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'dashboard_state.dart';
+part of 'search_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,7 +12,7 @@ part of 'dashboard_state.dart';
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
-mixin _$DashboardState {
+mixin _$SearchState {
 
 
 
@@ -20,7 +20,7 @@ mixin _$DashboardState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is DashboardState);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SearchState);
 }
 
 
@@ -29,20 +29,20 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'DashboardState()';
+  return 'SearchState()';
 }
 
 
 }
 
 /// @nodoc
-class $DashboardStateCopyWith<$Res>  {
-$DashboardStateCopyWith(DashboardState _, $Res Function(DashboardState) __);
+class $SearchStateCopyWith<$Res>  {
+$SearchStateCopyWith(SearchState _, $Res Function(SearchState) __);
 }
 
 
-/// Adds pattern-matching-related methods to [DashboardState].
-extension DashboardStatePatterns on DashboardState {
+/// Adds pattern-matching-related methods to [SearchState].
+extension SearchStatePatterns on SearchState {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -55,14 +55,14 @@ extension DashboardStatePatterns on DashboardState {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( _IsLoading value)?  isLoading,TResult Function( _IsLoadingMore value)?  isLoadingMore,TResult Function( _PopularLoaded value)?  popularLoaded,TResult Function( _Error value)?  error,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( _IsLoading value)?  isLoading,TResult Function( _IsLoadingMore value)?  isLoadingMore,TResult Function( _SearchLoaded value)?  searchLoaded,TResult Function( _Error value)?  error,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial(_that);case _IsLoading() when isLoading != null:
 return isLoading(_that);case _IsLoadingMore() when isLoadingMore != null:
-return isLoadingMore(_that);case _PopularLoaded() when popularLoaded != null:
-return popularLoaded(_that);case _Error() when error != null:
+return isLoadingMore(_that);case _SearchLoaded() when searchLoaded != null:
+return searchLoaded(_that);case _Error() when error != null:
 return error(_that);case _:
   return orElse();
 
@@ -81,14 +81,14 @@ return error(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( _IsLoading value)  isLoading,required TResult Function( _IsLoadingMore value)  isLoadingMore,required TResult Function( _PopularLoaded value)  popularLoaded,required TResult Function( _Error value)  error,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( _IsLoading value)  isLoading,required TResult Function( _IsLoadingMore value)  isLoadingMore,required TResult Function( _SearchLoaded value)  searchLoaded,required TResult Function( _Error value)  error,}){
 final _that = this;
 switch (_that) {
 case _Initial():
 return initial(_that);case _IsLoading():
 return isLoading(_that);case _IsLoadingMore():
-return isLoadingMore(_that);case _PopularLoaded():
-return popularLoaded(_that);case _Error():
+return isLoadingMore(_that);case _SearchLoaded():
+return searchLoaded(_that);case _Error():
 return error(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -106,14 +106,14 @@ return error(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( _IsLoading value)?  isLoading,TResult? Function( _IsLoadingMore value)?  isLoadingMore,TResult? Function( _PopularLoaded value)?  popularLoaded,TResult? Function( _Error value)?  error,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( _IsLoading value)?  isLoading,TResult? Function( _IsLoadingMore value)?  isLoadingMore,TResult? Function( _SearchLoaded value)?  searchLoaded,TResult? Function( _Error value)?  error,}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial(_that);case _IsLoading() when isLoading != null:
 return isLoading(_that);case _IsLoadingMore() when isLoadingMore != null:
-return isLoadingMore(_that);case _PopularLoaded() when popularLoaded != null:
-return popularLoaded(_that);case _Error() when error != null:
+return isLoadingMore(_that);case _SearchLoaded() when searchLoaded != null:
+return searchLoaded(_that);case _Error() when error != null:
 return error(_that);case _:
   return null;
 
@@ -131,13 +131,13 @@ return error(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  isLoading,TResult Function()?  isLoadingMore,TResult Function( List<Movie> movies,  int page,  int totalPages,  bool isLoadingMore)?  popularLoaded,TResult Function( String message)?  error,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  isLoading,TResult Function()?  isLoadingMore,TResult Function( List<Movie> movies,  int page,  int totalPages,  bool isLoadingMore)?  searchLoaded,TResult Function( String message)?  error,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case _IsLoading() when isLoading != null:
 return isLoading();case _IsLoadingMore() when isLoadingMore != null:
-return isLoadingMore();case _PopularLoaded() when popularLoaded != null:
-return popularLoaded(_that.movies,_that.page,_that.totalPages,_that.isLoadingMore);case _Error() when error != null:
+return isLoadingMore();case _SearchLoaded() when searchLoaded != null:
+return searchLoaded(_that.movies,_that.page,_that.totalPages,_that.isLoadingMore);case _Error() when error != null:
 return error(_that.message);case _:
   return orElse();
 
@@ -156,13 +156,13 @@ return error(_that.message);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  isLoading,required TResult Function()  isLoadingMore,required TResult Function( List<Movie> movies,  int page,  int totalPages,  bool isLoadingMore)  popularLoaded,required TResult Function( String message)  error,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  isLoading,required TResult Function()  isLoadingMore,required TResult Function( List<Movie> movies,  int page,  int totalPages,  bool isLoadingMore)  searchLoaded,required TResult Function( String message)  error,}) {final _that = this;
 switch (_that) {
 case _Initial():
 return initial();case _IsLoading():
 return isLoading();case _IsLoadingMore():
-return isLoadingMore();case _PopularLoaded():
-return popularLoaded(_that.movies,_that.page,_that.totalPages,_that.isLoadingMore);case _Error():
+return isLoadingMore();case _SearchLoaded():
+return searchLoaded(_that.movies,_that.page,_that.totalPages,_that.isLoadingMore);case _Error():
 return error(_that.message);case _:
   throw StateError('Unexpected subclass');
 
@@ -180,13 +180,13 @@ return error(_that.message);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  isLoading,TResult? Function()?  isLoadingMore,TResult? Function( List<Movie> movies,  int page,  int totalPages,  bool isLoadingMore)?  popularLoaded,TResult? Function( String message)?  error,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  isLoading,TResult? Function()?  isLoadingMore,TResult? Function( List<Movie> movies,  int page,  int totalPages,  bool isLoadingMore)?  searchLoaded,TResult? Function( String message)?  error,}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case _IsLoading() when isLoading != null:
 return isLoading();case _IsLoadingMore() when isLoadingMore != null:
-return isLoadingMore();case _PopularLoaded() when popularLoaded != null:
-return popularLoaded(_that.movies,_that.page,_that.totalPages,_that.isLoadingMore);case _Error() when error != null:
+return isLoadingMore();case _SearchLoaded() when searchLoaded != null:
+return searchLoaded(_that.movies,_that.page,_that.totalPages,_that.isLoadingMore);case _Error() when error != null:
 return error(_that.message);case _:
   return null;
 
@@ -198,7 +198,7 @@ return error(_that.message);case _:
 /// @nodoc
 
 
-class _Initial implements DashboardState {
+class _Initial implements SearchState {
   const _Initial();
   
 
@@ -218,7 +218,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'DashboardState.initial()';
+  return 'SearchState.initial()';
 }
 
 
@@ -230,7 +230,7 @@ String toString() {
 /// @nodoc
 
 
-class _IsLoading implements DashboardState {
+class _IsLoading implements SearchState {
   const _IsLoading();
   
 
@@ -250,7 +250,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'DashboardState.isLoading()';
+  return 'SearchState.isLoading()';
 }
 
 
@@ -262,7 +262,7 @@ String toString() {
 /// @nodoc
 
 
-class _IsLoadingMore implements DashboardState {
+class _IsLoadingMore implements SearchState {
   const _IsLoadingMore();
   
 
@@ -282,7 +282,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'DashboardState.isLoadingMore()';
+  return 'SearchState.isLoadingMore()';
 }
 
 
@@ -294,8 +294,8 @@ String toString() {
 /// @nodoc
 
 
-class _PopularLoaded implements DashboardState {
-  const _PopularLoaded({required final  List<Movie> movies, required this.page, required this.totalPages, this.isLoadingMore = false}): _movies = movies;
+class _SearchLoaded implements SearchState {
+  const _SearchLoaded({required final  List<Movie> movies, required this.page, required this.totalPages, this.isLoadingMore = false}): _movies = movies;
   
 
  final  List<Movie> _movies;
@@ -309,17 +309,17 @@ class _PopularLoaded implements DashboardState {
  final  int totalPages;
 @JsonKey() final  bool isLoadingMore;
 
-/// Create a copy of DashboardState
+/// Create a copy of SearchState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$PopularLoadedCopyWith<_PopularLoaded> get copyWith => __$PopularLoadedCopyWithImpl<_PopularLoaded>(this, _$identity);
+_$SearchLoadedCopyWith<_SearchLoaded> get copyWith => __$SearchLoadedCopyWithImpl<_SearchLoaded>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PopularLoaded&&const DeepCollectionEquality().equals(other._movies, _movies)&&(identical(other.page, page) || other.page == page)&&(identical(other.totalPages, totalPages) || other.totalPages == totalPages)&&(identical(other.isLoadingMore, isLoadingMore) || other.isLoadingMore == isLoadingMore));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SearchLoaded&&const DeepCollectionEquality().equals(other._movies, _movies)&&(identical(other.page, page) || other.page == page)&&(identical(other.totalPages, totalPages) || other.totalPages == totalPages)&&(identical(other.isLoadingMore, isLoadingMore) || other.isLoadingMore == isLoadingMore));
 }
 
 
@@ -328,15 +328,15 @@ int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(
 
 @override
 String toString() {
-  return 'DashboardState.popularLoaded(movies: $movies, page: $page, totalPages: $totalPages, isLoadingMore: $isLoadingMore)';
+  return 'SearchState.searchLoaded(movies: $movies, page: $page, totalPages: $totalPages, isLoadingMore: $isLoadingMore)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$PopularLoadedCopyWith<$Res> implements $DashboardStateCopyWith<$Res> {
-  factory _$PopularLoadedCopyWith(_PopularLoaded value, $Res Function(_PopularLoaded) _then) = __$PopularLoadedCopyWithImpl;
+abstract mixin class _$SearchLoadedCopyWith<$Res> implements $SearchStateCopyWith<$Res> {
+  factory _$SearchLoadedCopyWith(_SearchLoaded value, $Res Function(_SearchLoaded) _then) = __$SearchLoadedCopyWithImpl;
 @useResult
 $Res call({
  List<Movie> movies, int page, int totalPages, bool isLoadingMore
@@ -347,17 +347,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$PopularLoadedCopyWithImpl<$Res>
-    implements _$PopularLoadedCopyWith<$Res> {
-  __$PopularLoadedCopyWithImpl(this._self, this._then);
+class __$SearchLoadedCopyWithImpl<$Res>
+    implements _$SearchLoadedCopyWith<$Res> {
+  __$SearchLoadedCopyWithImpl(this._self, this._then);
 
-  final _PopularLoaded _self;
-  final $Res Function(_PopularLoaded) _then;
+  final _SearchLoaded _self;
+  final $Res Function(_SearchLoaded) _then;
 
-/// Create a copy of DashboardState
+/// Create a copy of SearchState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? movies = null,Object? page = null,Object? totalPages = null,Object? isLoadingMore = null,}) {
-  return _then(_PopularLoaded(
+  return _then(_SearchLoaded(
 movies: null == movies ? _self._movies : movies // ignore: cast_nullable_to_non_nullable
 as List<Movie>,page: null == page ? _self.page : page // ignore: cast_nullable_to_non_nullable
 as int,totalPages: null == totalPages ? _self.totalPages : totalPages // ignore: cast_nullable_to_non_nullable
@@ -372,13 +372,13 @@ as bool,
 /// @nodoc
 
 
-class _Error implements DashboardState {
+class _Error implements SearchState {
   const _Error(this.message);
   
 
  final  String message;
 
-/// Create a copy of DashboardState
+/// Create a copy of SearchState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
@@ -397,14 +397,14 @@ int get hashCode => Object.hash(runtimeType,message);
 
 @override
 String toString() {
-  return 'DashboardState.error(message: $message)';
+  return 'SearchState.error(message: $message)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$ErrorCopyWith<$Res> implements $DashboardStateCopyWith<$Res> {
+abstract mixin class _$ErrorCopyWith<$Res> implements $SearchStateCopyWith<$Res> {
   factory _$ErrorCopyWith(_Error value, $Res Function(_Error) _then) = __$ErrorCopyWithImpl;
 @useResult
 $Res call({
@@ -423,7 +423,7 @@ class __$ErrorCopyWithImpl<$Res>
   final _Error _self;
   final $Res Function(_Error) _then;
 
-/// Create a copy of DashboardState
+/// Create a copy of SearchState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? message = null,}) {
   return _then(_Error(

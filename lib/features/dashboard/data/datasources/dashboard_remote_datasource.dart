@@ -6,12 +6,12 @@ abstract class DashboardRemoteDataSource {
   /// Calls the https://api.themoviedb.org/3/movie/popular endpoint.
   ///
   /// Throws a [Failure] depending on the error code.
-  Future<List<MovieModel>> getPopularMovies();
+  Future<List<MovieModel>> getPopularMovies(int page);
 
-  /// Calls the https://api.themoviedb.org/3/movie/{movie_id} endpoint.
+  /// Calls the https://api.themoviedb.org/3/movie/ endpoint.
   ///
   /// Throws a [Failure] depending on the error code.
-  Future<List<MovieModel>> getMovie(String movieName);
+  Future<List<MovieModel>> getMoviesByName(int page, String movieName);
 }
 
 class DashboardRemoteDataSourceImpl implements DashboardRemoteDataSource {
@@ -20,11 +20,10 @@ class DashboardRemoteDataSourceImpl implements DashboardRemoteDataSource {
   final ApiClient _apiClient;
 
   @override
-  Future<List<MovieModel>> getPopularMovies() async {
+  Future<List<MovieModel>> getPopularMovies(int page) async {
     final response = await _apiClient.get('movie/popular',
       params: {
-        'language': 'en-US',
-        'page': 1,
+        'page': page,
       },
     );
 
@@ -39,8 +38,21 @@ class DashboardRemoteDataSourceImpl implements DashboardRemoteDataSource {
   }
 
   @override
-  Future<List<MovieModel>> getMovie(String movieName) {
-    // TODO: implement getMovie
-    throw UnimplementedError();
+  Future<List<MovieModel>> getMoviesByName(int page, String movieName) async {
+    final response = await _apiClient.get('/search/movie',
+      params: {
+        'query': movieName,
+        'page': page,
+      },
+    );
+
+    if (response is! Map || response['results'] == null) {
+      throw ServerFailure(errorMessage: 'Invalid response for search movies by name');
+    }
+
+    final results = (response['results'] as List).cast<dynamic>();
+    return results
+        .map((e) => MovieModel.fromJson(Map<String, dynamic>.from(e)))
+        .toList();
   }
 }

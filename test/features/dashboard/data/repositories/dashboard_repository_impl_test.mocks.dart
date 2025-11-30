@@ -33,9 +33,9 @@ import 'package:mockito/mockito.dart' as _i1;
 class MockDashboardRemoteDataSource extends _i1.Mock
     implements _i2.DashboardRemoteDataSource {
   @override
-  _i3.Future<List<_i4.MovieModel>> getPopularMovies() =>
+  _i3.Future<List<_i4.MovieModel>> getPopularMovies(int? page) =>
       (super.noSuchMethod(
-            Invocation.method(#getPopularMovies, []),
+            Invocation.method(#getPopularMovies, [page]),
             returnValue: _i3.Future<List<_i4.MovieModel>>.value(
               <_i4.MovieModel>[],
             ),
@@ -46,9 +46,12 @@ class MockDashboardRemoteDataSource extends _i1.Mock
           as _i3.Future<List<_i4.MovieModel>>);
 
   @override
-  _i3.Future<List<_i4.MovieModel>> getMovie(String? movieName) =>
+  _i3.Future<List<_i4.MovieModel>> getMoviesByName(
+    int? page,
+    String? movieName,
+  ) =>
       (super.noSuchMethod(
-            Invocation.method(#getMovie, [movieName]),
+            Invocation.method(#getMoviesByName, [page, movieName]),
             returnValue: _i3.Future<List<_i4.MovieModel>>.value(
               <_i4.MovieModel>[],
             ),

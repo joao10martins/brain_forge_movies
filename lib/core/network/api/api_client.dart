@@ -107,7 +107,8 @@ class ApiClient {
 
     try {
       if (data is Map && data['message'] != null) {
-        return data['message'].toString();
+        final message = data['message'];
+        return message is String ? message : message.toString();
       }
       return data.toString();
     } catch (_) {

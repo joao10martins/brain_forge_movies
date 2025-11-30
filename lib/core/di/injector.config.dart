@@ -16,10 +16,14 @@ import 'package:brain_forge_movies/features/dashboard/data/datasources/dashboard
     as _i566;
 import 'package:brain_forge_movies/features/dashboard/domain/repositories/dashboard_repository.dart'
     as _i865;
+import 'package:brain_forge_movies/features/dashboard/domain/usecases/get_movies_by_name.dart'
+    as _i880;
 import 'package:brain_forge_movies/features/dashboard/domain/usecases/get_popular_movies.dart'
     as _i453;
 import 'package:brain_forge_movies/features/dashboard/presentation/cubit/dashboard_cubit.dart'
     as _i542;
+import 'package:brain_forge_movies/features/dashboard/presentation/cubit/search_cubit.dart'
+    as _i810;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
@@ -44,8 +48,14 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i453.GetPopularMovies>(
       () => dashboardModule.getPopularMovies(gh<_i865.DashboardRepository>()),
     );
+    gh.lazySingleton<_i880.GetMoviesByName>(
+      () => dashboardModule.getMoviesByName(gh<_i865.DashboardRepository>()),
+    );
     gh.factory<_i542.DashboardCubit>(
       () => _i542.DashboardCubit(gh<_i453.GetPopularMovies>()),
+    );
+    gh.factory<_i810.SearchCubit>(
+      () => _i810.SearchCubit(getMoviesByName: gh<_i880.GetMoviesByName>()),
     );
     return this;
   }

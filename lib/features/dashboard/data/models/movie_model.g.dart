@@ -15,8 +15,8 @@ _MovieModel _$MovieModelFromJson(Map<String, dynamic> json) => _MovieModel(
   genres: (json['genre_ids'] as List<dynamic>)
       .map((e) => (e as num).toInt())
       .toList(),
-  backdropImage: json['backdrop_path'] as String,
-  posterImage: json['poster_path'] as String,
+  backdropImage: json['backdrop_path'] as String?,
+  posterImage: json['poster_path'] as String?,
 );
 
 Map<String, dynamic> _$MovieModelToJson(_MovieModel instance) =>

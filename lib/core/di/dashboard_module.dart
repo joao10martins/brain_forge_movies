@@ -1,3 +1,4 @@
+import 'package:brain_forge_movies/features/dashboard/domain/usecases/get_movies_by_name.dart';
 import 'package:injectable/injectable.dart';
 import '../../features/dashboard/data/datasources/dashboard_remote_datasource.dart';
 import '../../features/dashboard/data/repositories/dashboard_repository_impl.dart';
@@ -19,6 +20,7 @@ abstract class DashboardModule {
   GetPopularMovies getPopularMovies(DashboardRepository repo) =>
       GetPopularMovies(repo);
 
-  // @lazySingleton
-  // GetMovies getMovies(DashboardRepository repo) => GetMovies(repo);
+  @lazySingleton
+  GetMoviesByName getMoviesByName(DashboardRepository repo) =>
+      GetMoviesByName(repo);
 }

@@ -13,8 +13,8 @@ abstract class MovieModel with _$MovieModel {
     @JsonKey(name: 'overview') required String description,
     @JsonKey(name: 'release_date') required String releaseDate,
     @JsonKey(name: 'genre_ids') required List<int> genres,
-    @JsonKey(name: 'backdrop_path') required String backdropImage,
-    @JsonKey(name: 'poster_path') required String posterImage,
+    @JsonKey(name: 'backdrop_path') String? backdropImage,
+    @JsonKey(name: 'poster_path') String? posterImage,
   }) = _MovieModel;
 
   factory MovieModel.fromJson(Map<String, dynamic> json) =>
@@ -29,7 +29,7 @@ extension MovieModelMapper on MovieModel {
     description: description,
     releaseDate: releaseDate,
     genres: genres,
-    backdropPath: backdropImage,
-    posterPath: posterImage,
+    backdropPath: backdropImage ?? '',
+    posterPath: posterImage ?? '',
   );
 }

@@ -1,5 +1,7 @@
 import 'package:brain_forge_movies/core/di/injector.dart';
 import 'package:brain_forge_movies/features/dashboard/presentation/cubit/dashboard_cubit.dart';
+import 'package:brain_forge_movies/features/dashboard/presentation/cubit/search_cubit.dart';
+import 'package:brain_forge_movies/features/dashboard/presentation/pages/search_movies_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -15,17 +17,22 @@ final appRouter = GoRouter(
         return MaterialPage(
           child: BlocProvider(
             create: (_) => getIt<DashboardCubit>()..loadPopularMovies(),
-            child: const DashboardPage(),
+            child: DashboardPage(),
           ),
         );
       },
     ),
-    // GoRoute(
-    //   path: '/movie/:id',
-    //   builder: (context, state) {
-    //     final id = int.parse(state.params['id']!);
-    //     return MovieDetailsPage(movieId: id);
-    //   },
-    // ),
+    GoRoute(
+      path: '/search',
+      name: 'search',
+      pageBuilder: (context, state) {
+        return MaterialPage(
+          child: BlocProvider(
+            create: (_) => getIt<SearchCubit>(),
+            child: SearchMoviesPage(),
+          ),
+        );
+      },
+    ),
   ],
 );

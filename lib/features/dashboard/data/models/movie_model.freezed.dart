@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$MovieModel {
 
-@JsonKey(name: 'id') int get movieId; String get title;@JsonKey(name: 'vote_average') double get rating;@JsonKey(name: 'overview') String get description;@JsonKey(name: 'release_date') String get releaseDate;@JsonKey(name: 'genre_ids') List<int> get genres;@JsonKey(name: 'backdrop_path') String get backdropImage;@JsonKey(name: 'poster_path') String get posterImage;
+@JsonKey(name: 'id') int get movieId; String get title;@JsonKey(name: 'vote_average') double get rating;@JsonKey(name: 'overview') String get description;@JsonKey(name: 'release_date') String get releaseDate;@JsonKey(name: 'genre_ids') List<int> get genres;@JsonKey(name: 'backdrop_path') String? get backdropImage;@JsonKey(name: 'poster_path') String? get posterImage;
 /// Create a copy of MovieModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $MovieModelCopyWith<$Res>  {
   factory $MovieModelCopyWith(MovieModel value, $Res Function(MovieModel) _then) = _$MovieModelCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'id') int movieId, String title,@JsonKey(name: 'vote_average') double rating,@JsonKey(name: 'overview') String description,@JsonKey(name: 'release_date') String releaseDate,@JsonKey(name: 'genre_ids') List<int> genres,@JsonKey(name: 'backdrop_path') String backdropImage,@JsonKey(name: 'poster_path') String posterImage
+@JsonKey(name: 'id') int movieId, String title,@JsonKey(name: 'vote_average') double rating,@JsonKey(name: 'overview') String description,@JsonKey(name: 'release_date') String releaseDate,@JsonKey(name: 'genre_ids') List<int> genres,@JsonKey(name: 'backdrop_path') String? backdropImage,@JsonKey(name: 'poster_path') String? posterImage
 });
 
 
@@ -65,7 +65,7 @@ class _$MovieModelCopyWithImpl<$Res>
 
 /// Create a copy of MovieModel
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? movieId = null,Object? title = null,Object? rating = null,Object? description = null,Object? releaseDate = null,Object? genres = null,Object? backdropImage = null,Object? posterImage = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? movieId = null,Object? title = null,Object? rating = null,Object? description = null,Object? releaseDate = null,Object? genres = null,Object? backdropImage = freezed,Object? posterImage = freezed,}) {
   return _then(_self.copyWith(
 movieId: null == movieId ? _self.movieId : movieId // ignore: cast_nullable_to_non_nullable
 as int,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
@@ -73,9 +73,9 @@ as String,rating: null == rating ? _self.rating : rating // ignore: cast_nullabl
 as double,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String,releaseDate: null == releaseDate ? _self.releaseDate : releaseDate // ignore: cast_nullable_to_non_nullable
 as String,genres: null == genres ? _self.genres : genres // ignore: cast_nullable_to_non_nullable
-as List<int>,backdropImage: null == backdropImage ? _self.backdropImage : backdropImage // ignore: cast_nullable_to_non_nullable
-as String,posterImage: null == posterImage ? _self.posterImage : posterImage // ignore: cast_nullable_to_non_nullable
-as String,
+as List<int>,backdropImage: freezed == backdropImage ? _self.backdropImage : backdropImage // ignore: cast_nullable_to_non_nullable
+as String?,posterImage: freezed == posterImage ? _self.posterImage : posterImage // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 
@@ -160,7 +160,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'id')  int movieId,  String title, @JsonKey(name: 'vote_average')  double rating, @JsonKey(name: 'overview')  String description, @JsonKey(name: 'release_date')  String releaseDate, @JsonKey(name: 'genre_ids')  List<int> genres, @JsonKey(name: 'backdrop_path')  String backdropImage, @JsonKey(name: 'poster_path')  String posterImage)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'id')  int movieId,  String title, @JsonKey(name: 'vote_average')  double rating, @JsonKey(name: 'overview')  String description, @JsonKey(name: 'release_date')  String releaseDate, @JsonKey(name: 'genre_ids')  List<int> genres, @JsonKey(name: 'backdrop_path')  String? backdropImage, @JsonKey(name: 'poster_path')  String? posterImage)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _MovieModel() when $default != null:
 return $default(_that.movieId,_that.title,_that.rating,_that.description,_that.releaseDate,_that.genres,_that.backdropImage,_that.posterImage);case _:
@@ -181,7 +181,7 @@ return $default(_that.movieId,_that.title,_that.rating,_that.description,_that.r
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'id')  int movieId,  String title, @JsonKey(name: 'vote_average')  double rating, @JsonKey(name: 'overview')  String description, @JsonKey(name: 'release_date')  String releaseDate, @JsonKey(name: 'genre_ids')  List<int> genres, @JsonKey(name: 'backdrop_path')  String backdropImage, @JsonKey(name: 'poster_path')  String posterImage)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'id')  int movieId,  String title, @JsonKey(name: 'vote_average')  double rating, @JsonKey(name: 'overview')  String description, @JsonKey(name: 'release_date')  String releaseDate, @JsonKey(name: 'genre_ids')  List<int> genres, @JsonKey(name: 'backdrop_path')  String? backdropImage, @JsonKey(name: 'poster_path')  String? posterImage)  $default,) {final _that = this;
 switch (_that) {
 case _MovieModel():
 return $default(_that.movieId,_that.title,_that.rating,_that.description,_that.releaseDate,_that.genres,_that.backdropImage,_that.posterImage);case _:
@@ -201,7 +201,7 @@ return $default(_that.movieId,_that.title,_that.rating,_that.description,_that.r
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'id')  int movieId,  String title, @JsonKey(name: 'vote_average')  double rating, @JsonKey(name: 'overview')  String description, @JsonKey(name: 'release_date')  String releaseDate, @JsonKey(name: 'genre_ids')  List<int> genres, @JsonKey(name: 'backdrop_path')  String backdropImage, @JsonKey(name: 'poster_path')  String posterImage)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'id')  int movieId,  String title, @JsonKey(name: 'vote_average')  double rating, @JsonKey(name: 'overview')  String description, @JsonKey(name: 'release_date')  String releaseDate, @JsonKey(name: 'genre_ids')  List<int> genres, @JsonKey(name: 'backdrop_path')  String? backdropImage, @JsonKey(name: 'poster_path')  String? posterImage)?  $default,) {final _that = this;
 switch (_that) {
 case _MovieModel() when $default != null:
 return $default(_that.movieId,_that.title,_that.rating,_that.description,_that.releaseDate,_that.genres,_that.backdropImage,_that.posterImage);case _:
@@ -216,7 +216,7 @@ return $default(_that.movieId,_that.title,_that.rating,_that.description,_that.r
 @JsonSerializable()
 
 class _MovieModel implements MovieModel {
-  const _MovieModel({@JsonKey(name: 'id') required this.movieId, required this.title, @JsonKey(name: 'vote_average') required this.rating, @JsonKey(name: 'overview') required this.description, @JsonKey(name: 'release_date') required this.releaseDate, @JsonKey(name: 'genre_ids') required final  List<int> genres, @JsonKey(name: 'backdrop_path') required this.backdropImage, @JsonKey(name: 'poster_path') required this.posterImage}): _genres = genres;
+  const _MovieModel({@JsonKey(name: 'id') required this.movieId, required this.title, @JsonKey(name: 'vote_average') required this.rating, @JsonKey(name: 'overview') required this.description, @JsonKey(name: 'release_date') required this.releaseDate, @JsonKey(name: 'genre_ids') required final  List<int> genres, @JsonKey(name: 'backdrop_path') this.backdropImage, @JsonKey(name: 'poster_path') this.posterImage}): _genres = genres;
   factory _MovieModel.fromJson(Map<String, dynamic> json) => _$MovieModelFromJson(json);
 
 @override@JsonKey(name: 'id') final  int movieId;
@@ -231,8 +231,8 @@ class _MovieModel implements MovieModel {
   return EqualUnmodifiableListView(_genres);
 }
 
-@override@JsonKey(name: 'backdrop_path') final  String backdropImage;
-@override@JsonKey(name: 'poster_path') final  String posterImage;
+@override@JsonKey(name: 'backdrop_path') final  String? backdropImage;
+@override@JsonKey(name: 'poster_path') final  String? posterImage;
 
 /// Create a copy of MovieModel
 /// with the given fields replaced by the non-null parameter values.
@@ -267,7 +267,7 @@ abstract mixin class _$MovieModelCopyWith<$Res> implements $MovieModelCopyWith<$
   factory _$MovieModelCopyWith(_MovieModel value, $Res Function(_MovieModel) _then) = __$MovieModelCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'id') int movieId, String title,@JsonKey(name: 'vote_average') double rating,@JsonKey(name: 'overview') String description,@JsonKey(name: 'release_date') String releaseDate,@JsonKey(name: 'genre_ids') List<int> genres,@JsonKey(name: 'backdrop_path') String backdropImage,@JsonKey(name: 'poster_path') String posterImage
+@JsonKey(name: 'id') int movieId, String title,@JsonKey(name: 'vote_average') double rating,@JsonKey(name: 'overview') String description,@JsonKey(name: 'release_date') String releaseDate,@JsonKey(name: 'genre_ids') List<int> genres,@JsonKey(name: 'backdrop_path') String? backdropImage,@JsonKey(name: 'poster_path') String? posterImage
 });
 
 
@@ -284,7 +284,7 @@ class __$MovieModelCopyWithImpl<$Res>
 
 /// Create a copy of MovieModel
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? movieId = null,Object? title = null,Object? rating = null,Object? description = null,Object? releaseDate = null,Object? genres = null,Object? backdropImage = null,Object? posterImage = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? movieId = null,Object? title = null,Object? rating = null,Object? description = null,Object? releaseDate = null,Object? genres = null,Object? backdropImage = freezed,Object? posterImage = freezed,}) {
   return _then(_MovieModel(
 movieId: null == movieId ? _self.movieId : movieId // ignore: cast_nullable_to_non_nullable
 as int,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
@@ -292,9 +292,9 @@ as String,rating: null == rating ? _self.rating : rating // ignore: cast_nullabl
 as double,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String,releaseDate: null == releaseDate ? _self.releaseDate : releaseDate // ignore: cast_nullable_to_non_nullable
 as String,genres: null == genres ? _self._genres : genres // ignore: cast_nullable_to_non_nullable
-as List<int>,backdropImage: null == backdropImage ? _self.backdropImage : backdropImage // ignore: cast_nullable_to_non_nullable
-as String,posterImage: null == posterImage ? _self.posterImage : posterImage // ignore: cast_nullable_to_non_nullable
-as String,
+as List<int>,backdropImage: freezed == backdropImage ? _self.backdropImage : backdropImage // ignore: cast_nullable_to_non_nullable
+as String?,posterImage: freezed == posterImage ? _self.posterImage : posterImage // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 

@@ -1,6 +1,6 @@
 import 'package:brain_forge_movies/features/dashboard/data/models/movie_model.dart';
 import 'package:brain_forge_movies/features/dashboard/domain/repositories/dashboard_repository.dart';
-import 'package:brain_forge_movies/features/dashboard/domain/usecases/get_movie.dart';
+import 'package:brain_forge_movies/features/dashboard/domain/usecases/get_movies_by_name.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';

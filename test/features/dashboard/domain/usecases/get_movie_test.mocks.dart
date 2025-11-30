@@ -6,7 +6,7 @@
 import 'dart:async' as _i4;
 
 import 'package:brain_forge_movies/core/error/failures.dart' as _i5;
-import 'package:brain_forge_movies/features/dashboard/domain/entities/movie.dart'
+import 'package:brain_forge_movies/features/dashboard/domain/entities/paginated_movies.dart'
     as _i6;
 import 'package:brain_forge_movies/features/dashboard/domain/repositories/dashboard_repository.dart'
     as _i3;
@@ -39,46 +39,49 @@ class _FakeEither_0<L, R> extends _i1.SmartFake implements _i2.Either<L, R> {
 class MockDashboardRepository extends _i1.Mock
     implements _i3.DashboardRepository {
   @override
-  _i4.Future<_i2.Either<_i5.Failure, List<_i6.Movie>>> getPopularMovies() =>
+  _i4.Future<_i2.Either<_i5.Failure, _i6.PaginatedMovies>> getPopularMovies(
+    int? page,
+  ) =>
       (super.noSuchMethod(
-            Invocation.method(#getPopularMovies, []),
+            Invocation.method(#getPopularMovies, [page]),
             returnValue:
-                _i4.Future<_i2.Either<_i5.Failure, List<_i6.Movie>>>.value(
-                  _FakeEither_0<_i5.Failure, List<_i6.Movie>>(
+                _i4.Future<_i2.Either<_i5.Failure, _i6.PaginatedMovies>>.value(
+                  _FakeEither_0<_i5.Failure, _i6.PaginatedMovies>(
                     this,
-                    Invocation.method(#getPopularMovies, []),
+                    Invocation.method(#getPopularMovies, [page]),
                   ),
                 ),
             returnValueForMissingStub:
-                _i4.Future<_i2.Either<_i5.Failure, List<_i6.Movie>>>.value(
-                  _FakeEither_0<_i5.Failure, List<_i6.Movie>>(
+                _i4.Future<_i2.Either<_i5.Failure, _i6.PaginatedMovies>>.value(
+                  _FakeEither_0<_i5.Failure, _i6.PaginatedMovies>(
                     this,
-                    Invocation.method(#getPopularMovies, []),
+                    Invocation.method(#getPopularMovies, [page]),
                   ),
                 ),
           )
-          as _i4.Future<_i2.Either<_i5.Failure, List<_i6.Movie>>>);
+          as _i4.Future<_i2.Either<_i5.Failure, _i6.PaginatedMovies>>);
 
   @override
-  _i4.Future<_i2.Either<_i5.Failure, List<_i6.Movie>>> getMovie(
+  _i4.Future<_i2.Either<_i5.Failure, _i6.PaginatedMovies>> getMoviesByName(
+    int? page,
     String? movieName,
   ) =>
       (super.noSuchMethod(
-            Invocation.method(#getMovie, [movieName]),
+            Invocation.method(#getMoviesByName, [page, movieName]),
             returnValue:
-                _i4.Future<_i2.Either<_i5.Failure, List<_i6.Movie>>>.value(
-                  _FakeEither_0<_i5.Failure, List<_i6.Movie>>(
+                _i4.Future<_i2.Either<_i5.Failure, _i6.PaginatedMovies>>.value(
+                  _FakeEither_0<_i5.Failure, _i6.PaginatedMovies>(
                     this,
-                    Invocation.method(#getMovie, [movieName]),
+                    Invocation.method(#getMoviesByName, [page, movieName]),
                   ),
                 ),
             returnValueForMissingStub:
-                _i4.Future<_i2.Either<_i5.Failure, List<_i6.Movie>>>.value(
-                  _FakeEither_0<_i5.Failure, List<_i6.Movie>>(
+                _i4.Future<_i2.Either<_i5.Failure, _i6.PaginatedMovies>>.value(
+                  _FakeEither_0<_i5.Failure, _i6.PaginatedMovies>(
                     this,
-                    Invocation.method(#getMovie, [movieName]),
+                    Invocation.method(#getMoviesByName, [page, movieName]),
                   ),
                 ),
           )
-          as _i4.Future<_i2.Either<_i5.Failure, List<_i6.Movie>>>);
+          as _i4.Future<_i2.Either<_i5.Failure, _i6.PaginatedMovies>>);
 }
