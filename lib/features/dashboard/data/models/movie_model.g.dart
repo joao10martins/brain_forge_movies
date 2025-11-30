@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'movie.dart';
+part of 'movie_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_Movie _$MovieFromJson(Map<String, dynamic> json) => _Movie(
+_MovieModel _$MovieModelFromJson(Map<String, dynamic> json) => _MovieModel(
   movieId: (json['id'] as num).toInt(),
   title: json['title'] as String,
   rating: (json['vote_average'] as num).toDouble(),
@@ -19,13 +19,14 @@ _Movie _$MovieFromJson(Map<String, dynamic> json) => _Movie(
   posterImage: json['poster_path'] as String,
 );
 
-Map<String, dynamic> _$MovieToJson(_Movie instance) => <String, dynamic>{
-  'id': instance.movieId,
-  'title': instance.title,
-  'vote_average': instance.rating,
-  'overview': instance.description,
-  'release_date': instance.releaseDate,
-  'genre_ids': instance.genres,
-  'backdrop_path': instance.backdropImage,
-  'poster_path': instance.posterImage,
-};
+Map<String, dynamic> _$MovieModelToJson(_MovieModel instance) =>
+    <String, dynamic>{
+      'id': instance.movieId,
+      'title': instance.title,
+      'vote_average': instance.rating,
+      'overview': instance.description,
+      'release_date': instance.releaseDate,
+      'genre_ids': instance.genres,
+      'backdrop_path': instance.backdropImage,
+      'poster_path': instance.posterImage,
+    };

@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'movie.dart';
+part of 'movie_model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,22 +13,22 @@ part of 'movie.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$Movie {
+mixin _$MovieModel {
 
 @JsonKey(name: 'id') int get movieId; String get title;@JsonKey(name: 'vote_average') double get rating;@JsonKey(name: 'overview') String get description;@JsonKey(name: 'release_date') String get releaseDate;@JsonKey(name: 'genre_ids') List<int> get genres;@JsonKey(name: 'backdrop_path') String get backdropImage;@JsonKey(name: 'poster_path') String get posterImage;
-/// Create a copy of Movie
+/// Create a copy of MovieModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$MovieCopyWith<Movie> get copyWith => _$MovieCopyWithImpl<Movie>(this as Movie, _$identity);
+$MovieModelCopyWith<MovieModel> get copyWith => _$MovieModelCopyWithImpl<MovieModel>(this as MovieModel, _$identity);
 
-  /// Serializes this Movie to a JSON map.
+  /// Serializes this MovieModel to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Movie&&(identical(other.movieId, movieId) || other.movieId == movieId)&&(identical(other.title, title) || other.title == title)&&(identical(other.rating, rating) || other.rating == rating)&&(identical(other.description, description) || other.description == description)&&(identical(other.releaseDate, releaseDate) || other.releaseDate == releaseDate)&&const DeepCollectionEquality().equals(other.genres, genres)&&(identical(other.backdropImage, backdropImage) || other.backdropImage == backdropImage)&&(identical(other.posterImage, posterImage) || other.posterImage == posterImage));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is MovieModel&&(identical(other.movieId, movieId) || other.movieId == movieId)&&(identical(other.title, title) || other.title == title)&&(identical(other.rating, rating) || other.rating == rating)&&(identical(other.description, description) || other.description == description)&&(identical(other.releaseDate, releaseDate) || other.releaseDate == releaseDate)&&const DeepCollectionEquality().equals(other.genres, genres)&&(identical(other.backdropImage, backdropImage) || other.backdropImage == backdropImage)&&(identical(other.posterImage, posterImage) || other.posterImage == posterImage));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -37,15 +37,15 @@ int get hashCode => Object.hash(runtimeType,movieId,title,rating,description,rel
 
 @override
 String toString() {
-  return 'Movie(movieId: $movieId, title: $title, rating: $rating, description: $description, releaseDate: $releaseDate, genres: $genres, backdropImage: $backdropImage, posterImage: $posterImage)';
+  return 'MovieModel(movieId: $movieId, title: $title, rating: $rating, description: $description, releaseDate: $releaseDate, genres: $genres, backdropImage: $backdropImage, posterImage: $posterImage)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $MovieCopyWith<$Res>  {
-  factory $MovieCopyWith(Movie value, $Res Function(Movie) _then) = _$MovieCopyWithImpl;
+abstract mixin class $MovieModelCopyWith<$Res>  {
+  factory $MovieModelCopyWith(MovieModel value, $Res Function(MovieModel) _then) = _$MovieModelCopyWithImpl;
 @useResult
 $Res call({
 @JsonKey(name: 'id') int movieId, String title,@JsonKey(name: 'vote_average') double rating,@JsonKey(name: 'overview') String description,@JsonKey(name: 'release_date') String releaseDate,@JsonKey(name: 'genre_ids') List<int> genres,@JsonKey(name: 'backdrop_path') String backdropImage,@JsonKey(name: 'poster_path') String posterImage
@@ -56,14 +56,14 @@ $Res call({
 
 }
 /// @nodoc
-class _$MovieCopyWithImpl<$Res>
-    implements $MovieCopyWith<$Res> {
-  _$MovieCopyWithImpl(this._self, this._then);
+class _$MovieModelCopyWithImpl<$Res>
+    implements $MovieModelCopyWith<$Res> {
+  _$MovieModelCopyWithImpl(this._self, this._then);
 
-  final Movie _self;
-  final $Res Function(Movie) _then;
+  final MovieModel _self;
+  final $Res Function(MovieModel) _then;
 
-/// Create a copy of Movie
+/// Create a copy of MovieModel
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? movieId = null,Object? title = null,Object? rating = null,Object? description = null,Object? releaseDate = null,Object? genres = null,Object? backdropImage = null,Object? posterImage = null,}) {
   return _then(_self.copyWith(
@@ -82,8 +82,8 @@ as String,
 }
 
 
-/// Adds pattern-matching-related methods to [Movie].
-extension MoviePatterns on Movie {
+/// Adds pattern-matching-related methods to [MovieModel].
+extension MovieModelPatterns on MovieModel {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -96,10 +96,10 @@ extension MoviePatterns on Movie {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _Movie value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _MovieModel value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _Movie() when $default != null:
+case _MovieModel() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -118,10 +118,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _Movie value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _MovieModel value)  $default,){
 final _that = this;
 switch (_that) {
-case _Movie():
+case _MovieModel():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -139,10 +139,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _Movie value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _MovieModel value)?  $default,){
 final _that = this;
 switch (_that) {
-case _Movie() when $default != null:
+case _MovieModel() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -162,7 +162,7 @@ return $default(_that);case _:
 
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'id')  int movieId,  String title, @JsonKey(name: 'vote_average')  double rating, @JsonKey(name: 'overview')  String description, @JsonKey(name: 'release_date')  String releaseDate, @JsonKey(name: 'genre_ids')  List<int> genres, @JsonKey(name: 'backdrop_path')  String backdropImage, @JsonKey(name: 'poster_path')  String posterImage)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _Movie() when $default != null:
+case _MovieModel() when $default != null:
 return $default(_that.movieId,_that.title,_that.rating,_that.description,_that.releaseDate,_that.genres,_that.backdropImage,_that.posterImage);case _:
   return orElse();
 
@@ -183,7 +183,7 @@ return $default(_that.movieId,_that.title,_that.rating,_that.description,_that.r
 
 @optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'id')  int movieId,  String title, @JsonKey(name: 'vote_average')  double rating, @JsonKey(name: 'overview')  String description, @JsonKey(name: 'release_date')  String releaseDate, @JsonKey(name: 'genre_ids')  List<int> genres, @JsonKey(name: 'backdrop_path')  String backdropImage, @JsonKey(name: 'poster_path')  String posterImage)  $default,) {final _that = this;
 switch (_that) {
-case _Movie():
+case _MovieModel():
 return $default(_that.movieId,_that.title,_that.rating,_that.description,_that.releaseDate,_that.genres,_that.backdropImage,_that.posterImage);case _:
   throw StateError('Unexpected subclass');
 
@@ -203,7 +203,7 @@ return $default(_that.movieId,_that.title,_that.rating,_that.description,_that.r
 
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'id')  int movieId,  String title, @JsonKey(name: 'vote_average')  double rating, @JsonKey(name: 'overview')  String description, @JsonKey(name: 'release_date')  String releaseDate, @JsonKey(name: 'genre_ids')  List<int> genres, @JsonKey(name: 'backdrop_path')  String backdropImage, @JsonKey(name: 'poster_path')  String posterImage)?  $default,) {final _that = this;
 switch (_that) {
-case _Movie() when $default != null:
+case _MovieModel() when $default != null:
 return $default(_that.movieId,_that.title,_that.rating,_that.description,_that.releaseDate,_that.genres,_that.backdropImage,_that.posterImage);case _:
   return null;
 
@@ -215,9 +215,9 @@ return $default(_that.movieId,_that.title,_that.rating,_that.description,_that.r
 /// @nodoc
 @JsonSerializable()
 
-class _Movie implements Movie {
-  const _Movie({@JsonKey(name: 'id') required this.movieId, required this.title, @JsonKey(name: 'vote_average') required this.rating, @JsonKey(name: 'overview') required this.description, @JsonKey(name: 'release_date') required this.releaseDate, @JsonKey(name: 'genre_ids') required final  List<int> genres, @JsonKey(name: 'backdrop_path') required this.backdropImage, @JsonKey(name: 'poster_path') required this.posterImage}): _genres = genres;
-  factory _Movie.fromJson(Map<String, dynamic> json) => _$MovieFromJson(json);
+class _MovieModel implements MovieModel {
+  const _MovieModel({@JsonKey(name: 'id') required this.movieId, required this.title, @JsonKey(name: 'vote_average') required this.rating, @JsonKey(name: 'overview') required this.description, @JsonKey(name: 'release_date') required this.releaseDate, @JsonKey(name: 'genre_ids') required final  List<int> genres, @JsonKey(name: 'backdrop_path') required this.backdropImage, @JsonKey(name: 'poster_path') required this.posterImage}): _genres = genres;
+  factory _MovieModel.fromJson(Map<String, dynamic> json) => _$MovieModelFromJson(json);
 
 @override@JsonKey(name: 'id') final  int movieId;
 @override final  String title;
@@ -234,20 +234,20 @@ class _Movie implements Movie {
 @override@JsonKey(name: 'backdrop_path') final  String backdropImage;
 @override@JsonKey(name: 'poster_path') final  String posterImage;
 
-/// Create a copy of Movie
+/// Create a copy of MovieModel
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$MovieCopyWith<_Movie> get copyWith => __$MovieCopyWithImpl<_Movie>(this, _$identity);
+_$MovieModelCopyWith<_MovieModel> get copyWith => __$MovieModelCopyWithImpl<_MovieModel>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$MovieToJson(this, );
+  return _$MovieModelToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Movie&&(identical(other.movieId, movieId) || other.movieId == movieId)&&(identical(other.title, title) || other.title == title)&&(identical(other.rating, rating) || other.rating == rating)&&(identical(other.description, description) || other.description == description)&&(identical(other.releaseDate, releaseDate) || other.releaseDate == releaseDate)&&const DeepCollectionEquality().equals(other._genres, _genres)&&(identical(other.backdropImage, backdropImage) || other.backdropImage == backdropImage)&&(identical(other.posterImage, posterImage) || other.posterImage == posterImage));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MovieModel&&(identical(other.movieId, movieId) || other.movieId == movieId)&&(identical(other.title, title) || other.title == title)&&(identical(other.rating, rating) || other.rating == rating)&&(identical(other.description, description) || other.description == description)&&(identical(other.releaseDate, releaseDate) || other.releaseDate == releaseDate)&&const DeepCollectionEquality().equals(other._genres, _genres)&&(identical(other.backdropImage, backdropImage) || other.backdropImage == backdropImage)&&(identical(other.posterImage, posterImage) || other.posterImage == posterImage));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -256,15 +256,15 @@ int get hashCode => Object.hash(runtimeType,movieId,title,rating,description,rel
 
 @override
 String toString() {
-  return 'Movie(movieId: $movieId, title: $title, rating: $rating, description: $description, releaseDate: $releaseDate, genres: $genres, backdropImage: $backdropImage, posterImage: $posterImage)';
+  return 'MovieModel(movieId: $movieId, title: $title, rating: $rating, description: $description, releaseDate: $releaseDate, genres: $genres, backdropImage: $backdropImage, posterImage: $posterImage)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$MovieCopyWith<$Res> implements $MovieCopyWith<$Res> {
-  factory _$MovieCopyWith(_Movie value, $Res Function(_Movie) _then) = __$MovieCopyWithImpl;
+abstract mixin class _$MovieModelCopyWith<$Res> implements $MovieModelCopyWith<$Res> {
+  factory _$MovieModelCopyWith(_MovieModel value, $Res Function(_MovieModel) _then) = __$MovieModelCopyWithImpl;
 @override @useResult
 $Res call({
 @JsonKey(name: 'id') int movieId, String title,@JsonKey(name: 'vote_average') double rating,@JsonKey(name: 'overview') String description,@JsonKey(name: 'release_date') String releaseDate,@JsonKey(name: 'genre_ids') List<int> genres,@JsonKey(name: 'backdrop_path') String backdropImage,@JsonKey(name: 'poster_path') String posterImage
@@ -275,17 +275,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$MovieCopyWithImpl<$Res>
-    implements _$MovieCopyWith<$Res> {
-  __$MovieCopyWithImpl(this._self, this._then);
+class __$MovieModelCopyWithImpl<$Res>
+    implements _$MovieModelCopyWith<$Res> {
+  __$MovieModelCopyWithImpl(this._self, this._then);
 
-  final _Movie _self;
-  final $Res Function(_Movie) _then;
+  final _MovieModel _self;
+  final $Res Function(_MovieModel) _then;
 
-/// Create a copy of Movie
+/// Create a copy of MovieModel
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? movieId = null,Object? title = null,Object? rating = null,Object? description = null,Object? releaseDate = null,Object? genres = null,Object? backdropImage = null,Object? posterImage = null,}) {
-  return _then(_Movie(
+  return _then(_MovieModel(
 movieId: null == movieId ? _self.movieId : movieId // ignore: cast_nullable_to_non_nullable
 as int,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
 as String,rating: null == rating ? _self.rating : rating // ignore: cast_nullable_to_non_nullable

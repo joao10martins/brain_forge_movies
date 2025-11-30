@@ -24,7 +24,7 @@ dependencies:
   shimmer_animation: ^2.1.0+1
   # Service locator
   get_it: ^9.1.1
-  injectable: ^2.3.2
+  injectable: ^2.7.0
   flutter_native_splash: ^2.2.7
   # Networking
   dio: ^5.9.0
@@ -42,7 +42,7 @@ dev_dependencies:
   mockito: ^5.6.1
   # Code Generation Tools
   build_runner: ^2.4.6  # Code generation runner
-  injectable_generator: ^2.4.1  # Injectable code generator
+  injectable_generator: ^2.9.1  # Injectable code generator
 
 flutter:
   uses-material-design: true

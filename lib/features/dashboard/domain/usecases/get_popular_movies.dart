@@ -1,8 +1,10 @@
 import 'package:brain_forge_movies/core/error/failures.dart';
 import 'package:brain_forge_movies/core/usecases/usecase.dart';
-import 'package:brain_forge_movies/features/dashboard/data/models/movie.dart';
+import 'package:brain_forge_movies/features/dashboard/data/models/movie_model.dart';
 import 'package:brain_forge_movies/features/dashboard/domain/repositories/dashboard_repository.dart';
 import 'package:dartz/dartz.dart';
+
+import '../entities/movie.dart';
 
 class GetPopularMovies implements UseCase<List<Movie>, NoParams> {
   final DashboardRepository repository;

@@ -1,5 +1,5 @@
 import 'package:brain_forge_movies/core/usecases/usecase.dart';
-import 'package:brain_forge_movies/features/dashboard/data/models/movie.dart';
+import 'package:brain_forge_movies/features/dashboard/data/models/movie_model.dart';
 import 'package:brain_forge_movies/features/dashboard/domain/repositories/dashboard_repository.dart';
 import 'package:brain_forge_movies/features/dashboard/domain/usecases/get_popular_movies.dart';
 import 'package:dartz/dartz.dart';
@@ -14,15 +14,15 @@ import 'get_popular_movies_test.mocks.dart';
 void main() {
   late GetPopularMovies usecase;
   late MockDashboardRepository mockDashboardRepository;
-  late List<Movie> tPopularMovies;
+  late List<MovieModel> tPopularMovies;
 
   setUp(() {
     mockDashboardRepository = MockDashboardRepository();
     usecase = GetPopularMovies(mockDashboardRepository);
 
     tPopularMovies = [
-      Movie(movieId: 1, title: 'Test Movie', rating: 5, description: 'Test Movie Description', genres: [1, 2, 3], releaseDate: '01-01-2025', backdropImage: 'testMovieBackdrop', posterImage: 'testMoviePoster'),
-      Movie(movieId: 2, title: 'Another Movie', rating: 6, description: 'Another Test Movie Description', genres: [5, 6], releaseDate: '28-11-2025', backdropImage: 'anotherTestMovieBackdrop', posterImage: 'anotherTestMoviePoster'),
+      MovieModel(movieId: 1, title: 'Test Movie', rating: 5, description: 'Test Movie Description', genres: [1, 2, 3], releaseDate: '01-01-2025', backdropImage: 'testMovieBackdrop', posterImage: 'testMoviePoster'),
+      MovieModel(movieId: 2, title: 'Another Movie', rating: 6, description: 'Another Test Movie Description', genres: [5, 6], releaseDate: '28-11-2025', backdropImage: 'anotherTestMovieBackdrop', posterImage: 'anotherTestMoviePoster'),
     ];
   });
 
