@@ -1,6 +1,7 @@
 # BrainForge Movies Demo App
 
 This project is created in Flutter using BLoC(Cubit) along with Clean Architecture.
+![Dashboard](https://imgur.com/a/dItvDDg) ![Search](https://imgur.com/Ppc9Ktr) ![Details](https://imgur.com/jykFK3f)
 
 ## Getting Started
 
