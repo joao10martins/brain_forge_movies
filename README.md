@@ -83,7 +83,7 @@ Domain layer will be divided into 3 packages:
 
 The data layer consists of a Repository implementation (the contract comes from the domain layer) and data sources.
 This layer contains 2 packages:
-* `models` (Usually it would be in this data layer inside the feature, but I moved it into a general/common place)
+* `models` 
 * `repositories/repository_impl` - with implementation for all repositories defined inside `domain` layer.
 
 ## Folder Structure
